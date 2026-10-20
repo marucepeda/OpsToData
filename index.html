@@ -9,6 +9,10 @@
 <meta property="og:description" content="From operations to data. From data to decisions.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://opstodata.com">
+<link rel="canonical" href="https://opstodata.com/">
+<link rel="alternate" hreflang="en" href="https://opstodata.com/">
+<link rel="alternate" hreflang="es" href="https://opstodata.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://opstodata.com/">  
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230E1512'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Georgia,serif' fill='%23E8A33D' text-anchor='middle'%3Eo%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -66,6 +70,35 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+  }
+    .header-actions{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .language-switch{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .language-switch a{
+    color: var(--ink-dim);
+    padding: 6px 2px;
+  }
+
+  .language-switch a[aria-current="page"]{
+    color: var(--amber);
+    font-weight: 600;
+  }
+
+  @media (max-width: 420px){
+    .header-actions{ gap: 6px; }
+    .social{ gap: 4px; }
   }
 
   .social{
@@ -231,9 +264,17 @@
 <body>
 
 <header class="wrap">
-  <div class="topbar">
-    <div class="mark"><span class="a">Ops</span><span class="w">To</span><span class="a">Data</span></div>
-    <div class="social">
+<div class="topbar">
+  <div class="mark"><span class="a">Ops</span><span class="w">To</span><span class="a">Data</span></div>
+
+  <div class="header-actions">
+    <nav class="language-switch" aria-label="Language">
+      <a href="/" lang="en" aria-current="page">EN</a>
+      <span aria-hidden="true">|</span>
+      <a href="/es/" lang="es">ES</a>
+    </nav>
+
+    <div class="social">      
       <a href="https://www.instagram.com/opstodata" target="_blank" rel="noopener" aria-label="OpsToData on Instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg>
       </a>
@@ -241,6 +282,7 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
       </a>
     </div>
+   </div>
   </div>
 </header>
 
